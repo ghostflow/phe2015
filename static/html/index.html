@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../css/index.css"/>
@@ -53,6 +53,7 @@
 
 </nav>
 <!-- Modal -->
+<!-- 登录 -->
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
@@ -61,11 +62,13 @@
                 <h4 class="modal-title" id="loginLabel">登录</h4>
             </div>
             <div class="modal-body">
-                <form class="">
+                <form class="login-form">
                     <input type="text" class="form-control" id="exampleInputName2" placeholder="手机号">
-                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="密码">
+                    <input type="password" class="form-control" id="exampleInputEmail2" placeholder="密码">
+                    <input type="checkbox" name=""/><span>记住账号</span>
+                    <br/>
                     <button type="submit" class="btn btn-info">登录</button>
-                    <p><a href="" class="signUp">新用户注册</a><a href="" class="forgotPassword">忘记密码</a></p>
+                    <p><a href="javascript:void(0)" class="signUp">新用户注册</a><a href="javascript:void(0)" class="forgotPassword">忘记密码</a></p>
                 </form>
             </div>
             <!--<div class="modal-footer">-->
@@ -75,6 +78,7 @@
         </div>
     </div>
 </div>
+<!-- 注册 -->
 <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signupLable">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
@@ -83,12 +87,134 @@
                 <h4 class="modal-title" id="signupLable">注册</h4>
             </div>
             <div class="modal-body">
-                <form class="">
-                    <input type="text" class="form-control"  placeholder="手机号">
-                    <input type="email" class="form-control"  placeholder="密码">
+                <form id="signup-form" class="">
+                    <div class="mobile-wrap">
+                        <input type="text" class="form-control mobile"  placeholder="手机号" name="mobile">
+                    </div>
+                    <div class="password-wrap">
+                        <input type="password" class="form-control password"  placeholder="密码" name="password">
+                        <p class="error"></p>
+                    </div>
                     <button type="submit" class="btn btn-info">注册</button>
-                    <p><a href="" class="forgotPassword">忘记密码</a></p>
+                    <p class="forgot-password"><a href="javascript:void(0)" class="forgotPassword">忘记密码</a></p>
                 </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 注册--激活账号 -->
+<div class="modal fade" id="active" tabindex="-1" role="dialog" aria-labelledby="signupLable">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="activeLable">激活账号</h4>
+            </div>
+            <div class="modal-body">
+                <form id="active-form" class="">
+                    <p>你刚才的操作需要激活账户才可以继续，请输入你手机收到的短信激活码</p>
+                    <p>手机号：<span class="current-mobile"></span></p>
+                    <div class="password-wrap">
+                        <input type="text" class="form-control password"  placeholder="短信激活码" name="password">
+                        <p class="error"></p>
+                    </div>
+                    <button type="submit" class="btn btn-info">激活</button>
+                    <button class="btn btn-default"><span>20</span>秒后可重新发送短信</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 激活成功 -->
+<div class="modal fade" id="activeSuccess" tabindex="-1" role="dialog" aria-labelledby="signupLable">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="activeSuccessLable">激活成功</h4>
+            </div>
+            <div class="modal-body">
+                <p><span>3秒后将自动关闭</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--找回密码-->
+<div class="modal fade" id="findPassword" tabindex="-1" role="dialog" aria-labelledby="signupLable">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="findPasswordLable">找回密码</h4>
+            </div>
+            <div class="modal-body">
+                <form id="findPassword-form" class="">
+                    <div class="mobile-wrap">
+                        <input type="text" class="form-control findPassword-mobile"  placeholder="手机号" name="mobile">
+                        <p class="error"></p>
+                    </div>
+                    <button type="submit" class="btn btn-info">下一步</button>
+                    <button class="btn btn-default">返回</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--找回密码 -- 激活账号-->
+<div class="modal fade" id="findPasswordActive" tabindex="-1" role="dialog" aria-labelledby="signupLable">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="findPasswordActiveLable">激活账号</h4>
+            </div>
+            <div class="modal-body">
+                <form id="findPasswordActive-form" class="">
+                    <p>手机号:<span class="current-mobile"></span></p>
+                    <div class="mobile-wrap">
+                        <input type="text" class="form-control"  placeholder="短信激活码" name="mobile">
+                        <p class="error"></p>
+                    </div>
+                    <button type="submit" class="btn btn-info">下一步</button>
+                    <button class="btn btn-default"><span>20</span>秒后可重新发送短信</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--找回密码 新密码-->
+<div class="modal fade" id="findPasswordNewPassword" tabindex="-1" role="dialog" aria-labelledby="signupLable">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="findPasswordNewPasswordLable">激活账号</h4>
+            </div>
+            <div class="modal-body">
+                <form id="findPasswordNewPassword-form" class="">
+                    <p>手机号: <span class="current-mobile"></span></p>
+                    <div class="mobile-wrap">
+                        <input type="password" class="form-control mobile"  placeholder="新密码" name="mobile">
+                        <p class="error"></p>
+                    </div>
+
+                    <button type="submit" class="btn btn-info">保存</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--密码修改成功-->
+<div class="modal fade" id="NewPasswordSuccess" tabindex="-1" role="dialog" aria-labelledby="signupLable">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="NewPasswordSuccessLable">注册</h4>
+            </div>
+            <div class="modal-body">
+                <h3>密码修改成功</h3>
+                <p><span>3秒后将自动登录</span></p>
             </div>
         </div>
     </div>
@@ -230,4 +356,5 @@
 </body>
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../js/common.js"></script>
 </html>

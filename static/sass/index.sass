@@ -5,18 +5,28 @@
   z-index: 100
   .btn
     margin: 10px 10px 0 0
+.modal-dialog
+  margin-top: 200px
 .modal-sm
-  width: 450px
-  min-width: 450px
+  width: 385px
+#signup
   form
+    .mobile-wrap,.password-wrap
+      position: relative
+      .error
+        display: none
+        position: absolute
+        top: 38px
+        left: 60px
+        color: #fd5f39
     input
       width: 300px
-      margin: 20px auto
+      margin: 30px auto
     button
       display: block
       width: 300px
       margin: 10px auto
-    p
+    .forgot-password
       &:after
         content: ''
         display: block
@@ -28,6 +38,21 @@
         float: left
       .forgotPassword
         float: right
+#active
+  input
+    margin: 10px auto 30px
+
+#login
+  input[type=text],input[type=password]
+    margin: 30px auto
+  button[type=submit]
+    width: 100%
+    margin: 10px auto
+  .forgotPassword
+    float: right
+#findPassword
+  input
+    margin: 30px auto
 
 #carousel-example-generic
   max-height: 600px

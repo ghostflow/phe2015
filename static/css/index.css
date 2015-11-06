@@ -6,27 +6,52 @@
   .navbar .btn {
     margin: 10px 10px 0 0; }
 
+.modal-dialog {
+  margin-top: 200px; }
+
 .modal-sm {
-  width: 450px;
-  min-width: 450px; }
-  .modal-sm form input {
-    width: 300px;
-    margin: 20px auto; }
-  .modal-sm form button {
-    display: block;
-    width: 300px;
-    margin: 10px auto; }
-  .modal-sm form p:after {
-    content: "";
-    display: block;
-    clear: both;
-    overflow: hidden; }
-  .modal-sm form p a {
-    color: #00b3ee; }
-  .modal-sm form p .signup {
-    float: left; }
-  .modal-sm form p .forgotPassword {
-    float: right; }
+  width: 385px; }
+
+#signup form .mobile-wrap, #signup form .password-wrap {
+  position: relative; }
+  #signup form .mobile-wrap .error, #signup form .password-wrap .error {
+    display: none;
+    position: absolute;
+    top: 38px;
+    left: 60px;
+    color: #fd5f39; }
+#signup form input {
+  width: 300px;
+  margin: 30px auto; }
+#signup form button {
+  display: block;
+  width: 300px;
+  margin: 10px auto; }
+#signup form .forgot-password:after {
+  content: "";
+  display: block;
+  clear: both;
+  overflow: hidden; }
+#signup form .forgot-password a {
+  color: #00b3ee; }
+#signup form .forgot-password .signup {
+  float: left; }
+#signup form .forgot-password .forgotPassword {
+  float: right; }
+
+#active input {
+  margin: 10px auto 30px; }
+
+#login input[type=text], #login input[type=password] {
+  margin: 30px auto; }
+#login button[type=submit] {
+  width: 100%;
+  margin: 10px auto; }
+#login .forgotPassword {
+  float: right; }
+
+#findPassword input {
+  margin: 30px auto; }
 
 #carousel-example-generic {
   max-height: 600px;
