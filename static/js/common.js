@@ -9,6 +9,17 @@ var sinup_step = 0,
     login_step_trans = 0,
     findPassword_step = 0;
 
+// 状态重置
+function formReset(){
+  sinup_step = 0;
+  login_step_trans = 0;
+  findPassword_step = 0;
+  $('form').each(function(){
+    $(this).reset();
+  })
+}
+//登录
+
 //注册
 $('#signup-form').on('submit',function(e){
   e.preventDefault();
@@ -25,9 +36,16 @@ $('#signup-form').on('submit',function(e){
     $('.error').text('请输入6-16位密码').show();
     return;
   }
-  //$.ajax({
-  //
-  //})
+  $.ajax({
+    //url: "http://www.pheworld.net:8080/register",
+    url: 'http://172.26.10.2:8080/register',
+    data: $('#signup-form').serialize(),
+    type: 'post',
+    dataType: 'json',
+    success: function(data){
+      console.log(data)
+    }
+  })
   var mobile = $('.mobile').val();
   $('#signup').modal('hide');
   sinup_step = 1;
