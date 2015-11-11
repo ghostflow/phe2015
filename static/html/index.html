@@ -63,8 +63,9 @@
             </div>
             <div class="modal-body">
                 <form id="login-form">
-                    <input type="text" class="form-control" id="exampleInputName2" placeholder="手机号">
-                    <input type="password" class="form-control" id="exampleInputEmail2" placeholder="密码">
+                    <input type="text" class="form-control login-mobile" id="exampleInputName2" name="mobile" placeholder="手机号">
+                    <input type="password" class="form-control login-password" id="exampleInputEmail2" name="password" placeholder="密码">
+                    <p class="error"></p>
                     <input type="checkbox" name=""/><span>记住账号</span>
                     <br/>
                     <button type="submit" class="btn btn-info">登录</button>
@@ -92,11 +93,11 @@
                         <input type="text" class="form-control mobile"  placeholder="手机号" name="user_name">
                     </div>
                     <div class="password-wrap">
-                        <input type="password" class="form-control password"  placeholder="密码" name="password">
+                        <input type="password" class="form-control password"  placeholder="密码为8-16个字符，不能为纯数字" name="password">
                         <p class="error"></p>
                     </div>
                     <button type="submit" class="btn btn-info">注册</button>
-                    <p class="forgot-password"><a href="javascript:void(0)" class="forgotPassword">忘记密码</a></p>
+                    <p class="hasAccount"><a href="javascript:void(0)" class="has-account">已有账号登录</a></p>
                 </form>
             </div>
         </div>
@@ -115,11 +116,11 @@
                     <p>你刚才的操作需要激活账户才可以继续，请输入你手机收到的短信激活码</p>
                     <p>手机号：<span class="current-mobile"></span></p>
                     <div class="password-wrap">
-                        <input type="text" class="form-control password"  placeholder="短信激活码" name="password">
+                        <input type="text" class="form-control password"  placeholder="短信激活码" name="code">
                         <p class="error"></p>
                     </div>
                     <button type="submit" class="btn btn-info">激活</button>
-                    <button class="btn btn-default"><span>20</span>秒后可重新发送短信</button>
+                    <button type="button" class="btn btn-default message-button" disabled="true"><span class="message-count">20</span>秒后可重新发送短信</button>
                 </form>
             </div>
         </div>
@@ -134,7 +135,7 @@
                 <h4 class="modal-title" id="activeSuccessLable">激活成功</h4>
             </div>
             <div class="modal-body">
-                <p><span>3秒后将自动关闭</span></p>
+                <p><span class="count">3</span>秒后将自动关闭</p>
             </div>
         </div>
     </div>
@@ -150,7 +151,7 @@
             <div class="modal-body">
                 <form id="findPassword-form" class="">
                     <div class="mobile-wrap">
-                        <input type="text" class="form-control findPassword-mobile"  placeholder="手机号" name="mobile">
+                        <input type="text" class="form-control findPassword-mobile" placeholder="手机号" name="mobile">
                         <p class="error"></p>
                     </div>
                     <button type="submit" class="btn btn-info">下一步</button>
@@ -172,11 +173,11 @@
                 <form id="findPasswordActive-form" class="">
                     <p>手机号:<span class="current-mobile"></span></p>
                     <div class="mobile-wrap">
-                        <input type="text" class="form-control"  placeholder="短信激活码" name="mobile">
+                        <input type="text" class="form-control find-code"  placeholder="短信激活码" name="code">
                         <p class="error"></p>
                     </div>
                     <button type="submit" class="btn btn-info">下一步</button>
-                    <button class="btn btn-default"><span>20</span>秒后可重新发送短信</button>
+                    <button type="button" class="btn btn-default message-button" disabled="true"><span class="message-count">20</span>秒后可重新发送短信</button>
                 </form>
             </div>
         </div>
@@ -194,10 +195,9 @@
                 <form id="findPasswordNewPassword-form" class="">
                     <p>手机号: <span class="current-mobile"></span></p>
                     <div class="mobile-wrap">
-                        <input type="password" class="form-control mobile"  placeholder="新密码" name="mobile">
+                        <input type="password" class="form-control find-password"  placeholder="新密码" name="password">
                         <p class="error"></p>
                     </div>
-
                     <button type="submit" class="btn btn-info">保存</button>
                 </form>
             </div>
@@ -210,11 +210,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="NewPasswordSuccessLable">注册</h4>
+                <h4 class="modal-title" id="NewPasswordSuccessLable">密码修改成功</h4>
             </div>
             <div class="modal-body">
-                <h3>密码修改成功</h3>
-                <p><span>3秒后将自动登录</span></p>
+                <p><span class="count">3</span>秒后将自动关闭</p>
             </div>
         </div>
     </div>
