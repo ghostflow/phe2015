@@ -43,7 +43,7 @@ $('#signup-form').on('submit',function(e){
     type: 'post',
     dataType: 'json',
     success: function(data){
-      console.log(data)
+
     }
   })
   var mobile = $('.mobile').val();

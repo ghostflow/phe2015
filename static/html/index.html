@@ -92,7 +92,7 @@
                         <input type="text" class="form-control mobile"  placeholder="手机号" name="user_name">
                     </div>
                     <div class="password-wrap">
-                        <input type="password" class="form-control password"  placeholder="密码" name="token_now">
+                        <input type="password" class="form-control password"  placeholder="密码" name="password">
                         <p class="error"></p>
                     </div>
                     <button type="submit" class="btn btn-info">注册</button>
@@ -354,6 +354,24 @@
     <p>京ICP备12031756号 京公网安备11010802012285号</p>
 </footer>
 </body>
+<!--(if target dev)>
+<!-->
+<script src="../js/lib/zepto.min.js"></script>
+<script src="../js/lib/underscore-min.js"></script>
+<script src="../js/lib/backbone-min.js"></script>
+<script src="../js/lib/handlebars.min.js"></script>
+<script src="../js/src/common/native.js"></script>
+<script src="../js/lib/sea.js"></script>
+<script>var env = 'dev';</script>
+<script>
+    seajs.use('../js/src/module/index');
+</script>
+<!--<!(endif)-->
+<!--(if target release)>
+<script src="../js/lib/lib.js"></script>
+<script>var env = 'release';</script>
+<script src="../js/src/module/index.js" data-main="module/index"></script>
+<!(endif)-->
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../js/common.js"></script>

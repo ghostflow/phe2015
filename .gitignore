@@ -1,2 +1,8 @@
-bower_components/
+.git
+.sass-cache/
+node_modules/
+dist/
 .idea/
+css/
+fonts/.DS_Store
+
