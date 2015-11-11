@@ -238,6 +238,7 @@ define(function(require, exports) {
         return result;
 
     }
+
     var util = {
         escape2Html: escape2Html,
         removeHtmlTab: removeHtmlTab,
