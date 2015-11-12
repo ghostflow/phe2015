@@ -99,10 +99,10 @@ module.exports = function (grunt) {
                 if(!distPath){
                   throw new Error('can not founde ' + p2);
                 }
-                return match.replace(p1, '')
-                    .replace(p2, distPath.replace('dist/', ''));
+                return match.replace(p1, '..')
+                    .replace(p2, distPath.replace('dist', ''));
               } else {
-                return match.replace(p1, '');
+                return match.replace(p1, '..');
               }
             }
           }]
@@ -127,16 +127,15 @@ module.exports = function (grunt) {
             pattern: /="(\.\.\/)(.*?)"/gm,
             replacement: function(match, p1, p2) {
               if (p2.indexOf('.js') > 0 || p2.indexOf('.css') > 0) {
-                //console.log(grunt.filerev);
                 var distPath = grunt.filerev.summary[path.join('dist/' + p2)];
-                //if (!grunt.filerev.summary['dist' + p2]) {
                 if(!distPath){
                   throw new Error('can not founde ' + p2);
                 }
-                return match.replace(p1, '')
-                    .replace(p2, distPath.replace('dist/', ''));
+                console.log(match+'aaa'+p1+'123'+p2+"111"+distPath)
+                return match.replace(p1, '..')
+                    .replace(p2, distPath.replace('dist', ''));
               } else {
-                return match.replace(p1, '');
+                return match.replace(p1, '../');
               }
             }
           }]
@@ -151,7 +150,7 @@ module.exports = function (grunt) {
         },
         expand: true,
         cwd: 'sass',
-        src: ['**/*.sass'],
+        src: ['**/*.sass','**/*.scss'],
         dest: temp + '/css',
         ext: '.css'
       },
@@ -162,7 +161,7 @@ module.exports = function (grunt) {
         },
         expand: true,
         cwd: 'sass',
-        src: ['**/*.sass'],
+        src: ['**/*.sass','**/*.scss'],
         dest: temp + '/css',
         ext: '.css'
       }
