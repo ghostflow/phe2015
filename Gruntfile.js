@@ -8,18 +8,9 @@ module.exports = function (grunt) {
     concat: {
       dist: {
         src: ['js/lib/jquery-2.1.4.min.js','js/lib/underscore-min.js','js/lib/backbone-min.js',
-          'js/lib/handlebars.min.js','js/lib/materialize.min.js'],
+          'js/lib/handlebars.min.js','js/lib/materialize.min.js','js/lib/bootstrap.min.js'],
         dest: temp + '/js/lib/lib.js'
       },
-      dist_min: {
-        src: ['js/lib/zepto.min.js','js/lib/underscore-min.js','js/lib/backbone-min.js',
-          'js/lib/handlebars.min.js'],
-        dest: temp + '/js/lib/lib-mobile.js'
-      },
-      native: {
-        src: ['js/src/common/native.js'],
-        dest: temp+'/js/src/common/native.js'
-      }
     },
     combo: {
       options: {
