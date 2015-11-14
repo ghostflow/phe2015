@@ -1,5 +1,5 @@
 define(function(require, exports) {
-    var config = require('config');
+    var config = require('../common/config');
     var formatDate = function(date, format) {
         if (Object.prototype.toString.call(date) !== "[object Date]") {
             date = new Date(date);

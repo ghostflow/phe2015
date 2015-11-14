@@ -5,4 +5,5 @@ define(function(require,exports){
   var util = require('../common/util'),
       config = require('../common/config');
   var index = require('../view/index');
+
 });
