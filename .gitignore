@@ -3,6 +3,5 @@
 node_modules/
 dist/
 .idea/
-css/
 fonts/.DS_Store
 ~/.grunt-init
