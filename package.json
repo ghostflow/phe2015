@@ -1,5 +1,5 @@
 {
-  "name": "haojin",
+  "name": "phe2015",
   "version": "1.0.0",
   "scripts": {
     "install": "rm -rf ~/.grunt-init/fe && git clone https://github.com/ingf/grunt-init-fe.git ~/.grunt-init/fe"
@@ -23,8 +23,7 @@
     "grunt-targethtml": "~0.2.6",
     "load-grunt-tasks": "~0.3.0"
   },
-  "time": "20140923163915",
-  "description": "haojin-fe",
+  "description": "phe2015-fe",
   "main": "Gruntfile.js",
   "dependencies": {
     "grunt": "^0.4.5",
@@ -44,10 +43,6 @@
     "grunt-string-replace": "^1.2.0",
     "grunt-targethtml": "^0.2.6",
     "load-grunt-tasks": "^0.3.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@git.qfpay.net:fengmi/near-fe.git"
   },
   "author": "allen",
   "license": "ISC"
